@@ -10,5 +10,22 @@ veiculos = readr::read_csv2(
 
 unlink(tempdir, recursive = TRUE)
 
+infosiga_veiculos = veiculos |>
+    dplyr::select(
+        id_sinistro, ano_fabricacao = ano_fab,
+        ano_modelo, cor_veiculo, tipo_veiculo
+    ) |>
+    dplyr::mutate(
+        tipo_veiculo = dplyr::case_match(
+            tipo_veiculo,
+            "AUTOMOVEL" ~ "Automóvel",
+            "MOTOCICLETA" ~ "Motocicleta",
+            "CAMINHAO" ~ "Caminhão",
+            "ONIBUS" ~ "Ônibus",
+            "OUTROS" ~ "Outros",
+            "BICICLETA" ~ "Bicicleta",
+            "NAO DISPONIVEL" ~ NA
+        )
+    )
 
 usethis::use_data(infosiga_veiculos, overwrite = TRUE)
