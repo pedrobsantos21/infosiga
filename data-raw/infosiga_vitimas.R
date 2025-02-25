@@ -10,7 +10,7 @@ pessoas = readr::read_csv2(
 
 unlink(tempdir, recursive = TRUE)
 
-infosiga_obitos = pessoas |>
+infosiga_vitimas = pessoas |>
     dplyr::mutate(
         sexo = dplyr::case_match(
             sexo,
@@ -52,4 +52,4 @@ infosiga_obitos = pessoas |>
         sexo, idade, tipo_vitima, faixa_etaria
     )
 
-usethis::use_data(infosiga_obitos, overwrite = TRUE)
+usethis::use_data(infosiga_vitimas, overwrite = TRUE)
