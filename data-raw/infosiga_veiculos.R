@@ -1,5 +1,31 @@
-## code to prepare `infosiga_veiculos` dataset goes here
+tempdir = tempdir()
+path_zip = "data-raw/dados_infosiga.zip"
+unzip(path_zip, exdir = tempdir)
+path_veiculos = list.files(tempdir, pattern = "^veiculos", full.names = TRUE)
 
+veiculos = readr::read_csv2(
+    path_veiculos,
+    locale = readr::locale(encoding = "latin1")
+)
 
+unlink(tempdir, recursive = TRUE)
+
+infosiga_veiculos = veiculos |>
+    dplyr::select(
+        id_sinistro, ano_fabricacao = ano_fab,
+        ano_modelo, cor_veiculo, tipo_veiculo
+    ) |>
+    dplyr::mutate(
+        tipo_veiculo = dplyr::case_match(
+            tipo_veiculo,
+            "AUTOMOVEL" ~ "Automóvel",
+            "MOTOCICLETA" ~ "Motocicleta",
+            "CAMINHAO" ~ "Caminhão",
+            "ONIBUS" ~ "Ônibus",
+            "OUTROS" ~ "Outros",
+            "BICICLETA" ~ "Bicicleta",
+            "NAO DISPONIVEL" ~ NA
+        )
+    )
 
 usethis::use_data(infosiga_veiculos, overwrite = TRUE)
