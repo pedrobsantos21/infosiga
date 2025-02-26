@@ -26,6 +26,23 @@ infosiga_vitimas = pessoas |>
             "PEDESTRE" ~ "Pedestre",
             "NAO DISPONIVEL" ~ NA
         ),
+        tipo_veiculo_vitima = dplyr::case_match(
+            tipo_veiculo_vitima,
+            "PEDESTRE" ~ "Pedestre",
+            "MOTOCICLETA" ~ "Motocicleta",
+            "AUTOMOVEL" ~ "Automóvel",
+            "NAO DISPONIVEL" ~ NA,
+            "OUTROS" ~ "Outros",
+            "BICICLETA" ~ "Bicicleta",
+            .default = tipo_veiculo_vitima
+        ),
+        gravidade_lesao = dplyr::case_match(
+            gravidade_lesao,
+            "FATAL" ~ "Fatal",
+            "NAO DISPONIVEL" ~ NA,
+            "LEVE" ~ "Leve",
+            "GRAVE" ~ "Grave"
+        ),
         faixa_etaria_demografica = dplyr::case_match(
             faixa_etaria_demografica,
             "NAO DISPONIVEL" ~ NA,
@@ -49,7 +66,8 @@ infosiga_vitimas = pessoas |>
     ) |>
     dplyr::select(
         id_sinistro, data_sinistro, data_obito,
-        sexo, idade, tipo_vitima, faixa_etaria
+        sexo, idade, tipo_vitima, faixa_etaria, tipo_veiculo_vitima,
+        gravidade_lesao
     )
 
 usethis::use_data(infosiga_vitimas, overwrite = TRUE)
