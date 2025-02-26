@@ -4,6 +4,9 @@
 # infosiga
 
 <!-- badges: start -->
+
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 <!-- badges: end -->
 
 The goal of `infosiga` is to provide three datasets related to road
@@ -73,11 +76,9 @@ str(infosiga_sinistros)
 
 ``` r
 citation("infosiga")
-#> Warning in citation("infosiga"): could not determine year for 'infosiga' from
-#> package DESCRIPTION file
 #> To cite package 'infosiga' in publications use:
 #> 
-#>   Santos PAB (????). _infosiga: Road Crash Data From Infosiga.SP_. R
+#>   Santos PAB (2025). _infosiga: Road Crash Data From Infosiga.SP_. R
 #>   package version 0.0.0.9000.
 #> 
 #> A BibTeX entry for LaTeX users is
@@ -85,6 +86,7 @@ citation("infosiga")
 #>   @Manual{,
 #>     title = {infosiga: Road Crash Data From Infosiga.SP},
 #>     author = {Pedro Augusto Borges Santos},
+#>     year = {2025},
 #>     note = {R package version 0.0.0.9000},
 #>   }
 ```
