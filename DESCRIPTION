@@ -22,3 +22,5 @@ Depends:
     R (>= 3.5)
 LazyData: true
 LazyDataCompression: bzip2
+Date: 2025-02-26
+BugReports: https://github.com/pabsantos/infosiga/issues

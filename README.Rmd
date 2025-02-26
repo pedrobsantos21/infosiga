@@ -1,0 +1,45 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# infosiga
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of `infosiga` is to provide three datasets related to road crashes that happened in the State of São Paulo, Brazil, from the Infosiga.SP data repository. These data includes attributes from the crashes (`infosiga_sinistros`), victims (`infosiga_vitimas`) and vehicles (`infosiga_veiculos`).
+
+## Installation
+
+You can install the development version of infosiga from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("pabsantos/infosiga")
+```
+
+## Example
+
+This is a basic example which shows how to use this package:
+
+```{r example}
+library(infosiga)
+str(infosiga_sinistros)
+```
+
+# Citation
+
+```{r citation}
+citation("infosiga")
+```
