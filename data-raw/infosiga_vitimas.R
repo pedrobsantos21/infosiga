@@ -34,6 +34,8 @@ infosiga_vitimas = pessoas |>
             "NAO DISPONIVEL" ~ NA,
             "OUTROS" ~ "Outros",
             "BICICLETA" ~ "Bicicleta",
+            "CAMINHAO" ~ "Caminhão",
+            "ONIBUS" ~ "Ônibus",
             .default = tipo_veiculo_vitima
         ),
         gravidade_lesao = dplyr::case_match(
