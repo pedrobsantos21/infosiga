@@ -80,7 +80,7 @@ citation("infosiga")
 #> To cite package 'infosiga' in publications use:
 #> 
 #>   Santos PAB (2025). _infosiga: Road Crash Data From Infosiga.SP_. R
-#>   package version 0.0.0.9000.
+#>   package version 0.1.1.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -88,6 +88,6 @@ citation("infosiga")
 #>     title = {infosiga: Road Crash Data From Infosiga.SP},
 #>     author = {Pedro Augusto Borges Santos},
 #>     year = {2025},
-#>     note = {R package version 0.0.0.9000},
+#>     note = {R package version 0.1.1},
 #>   }
 ```
