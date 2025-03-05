@@ -54,7 +54,7 @@ infosiga_vitimas = pessoas |>
         faixa_etaria_demografica = factor(
             faixa_etaria_demografica,
             levels = c(
-                "0 a 4", "5 a 9", "10 a 14", "15 a 19", "20 a 24",
+                "00 a 04", "05 a 09", "10 a 14", "15 a 19", "20 a 24",
                 "25 a 29", "30 a 34", "35 a 39", "40 a 44", "45 a 49",
                 "50 a 54", "55 a 59", "60 a 64", "65 a 69", "70 a 74",
                 "75 a 79", "80 a 84", "85 a 89", "90+"
