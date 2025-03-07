@@ -1,3 +1,5 @@
+# infosiga 0.1.3
+
 # infosiga 0.1.2
 
 * Fix missing values of `faixa_etaria` in `infosiga_vitimas` (#16)
