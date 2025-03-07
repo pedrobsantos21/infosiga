@@ -99,8 +99,8 @@ infosiga_sinistros = sinistros |>
     ) |>
     dplyr::select(
         id_sinistro, data_sinistro, hora_sinistro, cod_ibge,
-        municipio = municipio.y, numero_logradouro, tipo_via, longitude,
-        latitude, dplyr::starts_with("tp_veic"),
+        municipio = municipio.y, logradouro, numero_logradouro, tipo_via,
+        longitude, latitude, dplyr::starts_with("tp_veic"), tipo_registro,
         dplyr::starts_with("gravidade"), administracao_via, jurisdicao_via,
         tipo_sinistro_primario, dplyr::starts_with("tp_sinistro")
     )
