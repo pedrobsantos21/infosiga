@@ -11,6 +11,7 @@
 #'   \item{hora_sinistro}{Time of the road crash. (class `hms`)}
 #'   \item{cod_ibge}{IBGE code of the municipality where the road crash occurred. (numeric)}
 #'   \item{municipio}{Name of the municipality where the road crash occurred. (character)}
+#'   \item{logradouro}{Street where the road crash occurred. (character)}
 #'   \item{numero_logradouro}{Street number where the road crash occurred. (numeric)}
 #'   \item{tipo_via}{Type of road where the road crash occurred. (character)}
 #'   \item{longitude}{Longitude of the road crash location. (numeric)}
@@ -22,6 +23,7 @@
 #'   \item{tp_veiculo_onibus}{Number of buses involved in the road crash. (numeric)}
 #'   \item{tp_veiculo_outros}{Number of other types of vehicles involved. (numeric)}
 #'   \item{tp_veiculo_automovel}{Number of cars involved in the road crash. (numeric)}
+#'   \item{tipo_registro}{Type of road crash based on the occurrence of fatalities (character)}
 #'   \item{gravidade_nao_disponivel}{Road crashes with unknown severity. (numeric)}
 #'   \item{gravidade_leve}{Road crashes with minor injuries. (numeric)}
 #'   \item{gravidade_fatal}{Fatal road crashes. (numeric)}
