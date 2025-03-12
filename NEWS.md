@@ -1,3 +1,5 @@
+# infosiga 0.1.4
+
 # infosiga 0.1.3
 
 * Add new variables: `logradouro` and `tipo_registro` (#17, #18)
