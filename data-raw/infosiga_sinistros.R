@@ -17,6 +17,15 @@ unlink(tempdir, recursive = TRUE)
 path_municipios = "data-raw/tb_municipio.csv"
 municipios = readr::read_csv(path_municipios)
 
+path_list_ibge = "data-raw/RELATORIO_DTB_BRASIL_MUNICIPIO.xls"
+list_ibge = readxl::read_excel(path_list_ibge, skip = 6)
+
+list_ibge_sp = list_ibge |> 
+    janitor::clean_names() |> 
+    dplyr::filter(nome_uf == "São Paulo") |> 
+    dplyr::select(cod_ibge = codigo_municipio_completo, nome_municipio)
+
+
 infosiga_sinistros = sinistros |>
     dplyr::mutate(
         tipo_registro = dplyr::case_match(
@@ -97,9 +106,11 @@ infosiga_sinistros = sinistros |>
         y = municipios,
         by = c("municipio" = "s_ds_municipio")
     ) |>
+    dplyr::mutate(cod_ibge = as.character(cod_ibge)) |> 
+    dplyr::left_join(list_ibge_sp, by = "cod_ibge") |> 
     dplyr::select(
-        id_sinistro, data_sinistro, hora_sinistro, cod_ibge,
-        municipio = municipio.y, logradouro, numero_logradouro, tipo_via,
+        id_sinistro, data_sinistro, hora_sinistro, cod_ibge, nome_municipio, 
+        logradouro, numero_logradouro, tipo_via,
         longitude, latitude, dplyr::starts_with("tp_veic"), tipo_registro,
         dplyr::starts_with("gravidade"), administracao_via, jurisdicao_via,
         tipo_sinistro_primario, dplyr::starts_with("tp_sinistro")

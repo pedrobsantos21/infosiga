@@ -13,7 +13,7 @@ A \code{tibble} with 797,575 observations and 36 variables:
 \item{data_sinistro}{Date of the road crash. (class \code{Date})}
 \item{hora_sinistro}{Time of the road crash. (class \code{hms})}
 \item{cod_ibge}{IBGE code of the municipality where the road crash occurred. (numeric)}
-\item{municipio}{Name of the municipality where the road crash occurred. (character)}
+\item{nome_municipio}{Name of the municipality where the road crash occurred. (character)}
 \item{logradouro}{Street where the road crash occurred. (character)}
 \item{numero_logradouro}{Street number where the road crash occurred. (numeric)}
 \item{tipo_via}{Type of road where the road crash occurred. (character)}

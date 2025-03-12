@@ -1,3 +1,8 @@
+# infosiga 0.1.4
+
+* Fix city names in `municipio` (#21)
+* Change `municipio` to `nome_municipio` in `infosiga_sinistros` (#21)
+
 # infosiga 0.1.3
 
 * Add new variables: `logradouro` and `tipo_registro` (#17, #18)
