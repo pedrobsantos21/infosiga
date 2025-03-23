@@ -5,7 +5,7 @@
 \alias{infosiga_veiculos}
 \title{Vehicles Involved in Road Crashes in São Paulo}
 \format{
-A \code{tibble} with 1,364,537 observations and 5 variables:
+A \code{tibble} with 1,379,997 observations and 5 variables:
 \describe{
 \item{id_sinistro}{Unique identifier for the road crash. (numeric)}
 \item{ano_fabricacao}{Year the vehicle was manufactured. (numeric)}

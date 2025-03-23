@@ -7,7 +7,7 @@
 \format{
 \subsection{\code{infosiga_vitimas}}{
 
-A \code{tibble} with 1,676,929 observations and 9 variables:
+A \code{tibble} with 1,618,002 observations and 9 variables:
 \describe{
 \item{id_sinistro}{Unique identifier for the road crash. (numeric)}
 \item{data_sinistro}{Date of the road crash. (class \code{Date})}

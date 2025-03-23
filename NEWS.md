@@ -1,3 +1,7 @@
+# infosiga 0.1.5
+
+* Update data to 2025-02 (#23)
+
 # infosiga 0.1.4
 
 * Fix city names in `municipio` (#21)

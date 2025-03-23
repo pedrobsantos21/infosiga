@@ -4,7 +4,7 @@
 #' occurred in the state of São Paulo, sourced from Infosiga.SP.
 #'
 #' @format ## `infosiga_sinistros`
-#' A `tibble` with 797,575 observations and 36 variables:
+#' A `tibble` with 807,096 observations and 36 variables:
 #' \describe{
 #'   \item{id_sinistro}{Unique identifier for the occurrence. (numeric)}
 #'   \item{data_sinistro}{Date of the road crash. (class `Date`)}
@@ -57,7 +57,7 @@
 #' injury severity, and vehicle type.
 #'
 #' @format ## `infosiga_vitimas`
-#' A `tibble` with 1,676,929 observations and 9 variables:
+#' A `tibble` with 1,618,002 observations and 9 variables:
 #' \describe{
 #'   \item{id_sinistro}{Unique identifier for the road crash. (numeric)}
 #'   \item{data_sinistro}{Date of the road crash. (class `Date`)}
@@ -80,7 +80,7 @@
 #' in São Paulo, including their manufacturing year, model year,
 #' color, and type.
 #'
-#' @format A `tibble` with 1,364,537 observations and 5 variables:
+#' @format A `tibble` with 1,379,997 observations and 5 variables:
 #' \describe{
 #'   \item{id_sinistro}{Unique identifier for the road crash. (numeric)}
 #'   \item{ano_fabricacao}{Year the vehicle was manufactured. (numeric)}
