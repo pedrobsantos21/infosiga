@@ -28,4 +28,6 @@ infosiga_veiculos = veiculos |>
         )
     )
 
+infosiga_veiculos$tipo_veiculo = enc2utf8(infosiga_veiculos$tipo_veiculo)
+
 usethis::use_data(infosiga_veiculos, overwrite = TRUE)
