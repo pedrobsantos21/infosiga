@@ -1,3 +1,5 @@
+# infosiga 0.1.5
+
 # infosiga 0.1.4
 
 * Fix city names in `municipio` (#21)
