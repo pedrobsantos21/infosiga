@@ -37,7 +37,8 @@ This is a basic example which shows how to use this package:
 
 ```{r example}
 library(infosiga)
-str(infosiga_sinistros)
+sinistros = load_infosiga("sinistros")
+str(sinistros)
 ```
 
 # Citation

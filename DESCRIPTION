@@ -18,9 +18,8 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: 
+    nanoparquet
 Depends: 
     R (>= 3.5)
-LazyData: true
-LazyDataCompression: bzip2
 Date: 2025-02-26
 BugReports: https://github.com/pabsantos/infosiga/issues

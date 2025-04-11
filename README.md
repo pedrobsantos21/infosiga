@@ -32,8 +32,9 @@ This is a basic example which shows how to use this package:
 
 ``` r
 library(infosiga)
-str(infosiga_sinistros)
-#> Classes 'tbl_df', 'tbl' and 'data.frame':    807096 obs. of  38 variables:
+sinistros = load_infosiga("sinistros")
+str(sinistros)
+#> Classes 'tbl' and 'data.frame':  807096 obs. of  38 variables:
 #>  $ id_sinistro                    : num  2501575 2456933 2463759 2487781 2489730 ...
 #>  $ data_sinistro                  : Date, format: "2014-12-21" "2014-12-23" ...
 #>  $ hora_sinistro                  : 'hms' num  72000 NA 24720 52200 ...

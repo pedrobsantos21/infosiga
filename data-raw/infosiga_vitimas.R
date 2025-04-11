@@ -76,4 +76,7 @@ infosiga_vitimas$tipo_veiculo_vitima = enc2utf8(
     infosiga_vitimas$tipo_veiculo_vitima
 )
 
-usethis::use_data(infosiga_vitimas, overwrite = TRUE)
+nanoparquet::write_parquet(
+    infosiga_vitimas,
+    "data-raw/infosiga_vitimas.parquet"
+)

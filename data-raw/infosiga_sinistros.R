@@ -128,4 +128,7 @@ infosiga_sinistros$tipo_sinistro_primario <- enc2utf8(
     infosiga_sinistros$tipo_sinistro_primario
 )
 
-usethis::use_data(infosiga_sinistros, overwrite = TRUE, version = 2)
+nanoparquet::write_parquet(
+    infosiga_sinistros,
+    "data-raw/infosiga_sinistros.parquet"
+)
