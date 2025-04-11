@@ -1,5 +1,11 @@
 # infosiga 0.2.0
 
+* Create function `load_infosiga` (#27)
+
+* Remove local files from pkg (#27)
+
+* Insert "Notificação" in the `infosiga_sinistros` dataset (#26)
+
 # infosiga 0.1.5
 
 * Update data to 2025-02 (#23)

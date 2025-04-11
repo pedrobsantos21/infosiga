@@ -99,9 +99,6 @@ infosiga_sinistros = sinistros |>
             )
         )
     ) |>
-    dplyr::filter(
-        tipo_registro %in% c("Sinistro fatal", "Sinistro não fatal")
-    ) |>
     dplyr::left_join(
         y = municipios,
         by = c("municipio" = "s_ds_municipio")
