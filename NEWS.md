@@ -1,3 +1,5 @@
+# infosiga 0.2.1
+
 # infosiga 0.2.0
 
 * Create function `load_infosiga` (#27)
