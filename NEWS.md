@@ -1,5 +1,11 @@
 # infosiga 0.2.1
 
+* Write tests (#29)
+
+* Remove release workflow (#30)
+
+* Transform output class to `tibble` (#31)
+
 # infosiga 0.2.0
 
 * Create function `load_infosiga` (#27)
