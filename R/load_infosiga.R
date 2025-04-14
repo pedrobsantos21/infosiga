@@ -4,7 +4,7 @@
 #'
 #' @param type One of `"sinistros"`, `"vitimas"`, or `"veiculos"`. Determines which dataset to load.
 #'
-#' @return A `data.frame` with the selected dataset.
+#' @return A `tibble` with the selected dataset.
 #'
 #' @examples
 #' \dontrun{
@@ -13,6 +13,8 @@
 #'
 #' @export
 load_infosiga <- function(type = c("sinistros", "vitimas", "veiculos")) {
+    type <- match.arg(type)
+
     file_url = paste0(
         "https://github.com/pabsantos/infosiga/releases/download/v",
         utils::packageVersion("infosiga"),

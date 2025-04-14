@@ -125,6 +125,8 @@ infosiga_sinistros$tipo_sinistro_primario <- enc2utf8(
     infosiga_sinistros$tipo_sinistro_primario
 )
 
+infosiga_sinistros = tibble::as_tibble(infosiga_sinistros)
+
 nanoparquet::write_parquet(
     infosiga_sinistros,
     "data-raw/infosiga_sinistros.parquet"

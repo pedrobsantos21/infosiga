@@ -76,6 +76,8 @@ infosiga_vitimas$tipo_veiculo_vitima = enc2utf8(
     infosiga_vitimas$tipo_veiculo_vitima
 )
 
+infosiga_vitimas = tibble::as_tibble(infosiga_vitimas)
+
 nanoparquet::write_parquet(
     infosiga_vitimas,
     "data-raw/infosiga_vitimas.parquet"

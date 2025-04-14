@@ -30,6 +30,8 @@ infosiga_veiculos = veiculos |>
 
 infosiga_veiculos$tipo_veiculo = enc2utf8(infosiga_veiculos$tipo_veiculo)
 
+infosiga_veiculos = tibble::as_tibble(infosiga_veiculos)
+
 nanoparquet::write_parquet(
     infosiga_veiculos,
     "data-raw/infosiga_veiculos.parquet"

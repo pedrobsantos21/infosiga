@@ -10,7 +10,7 @@ load_infosiga(type = c("sinistros", "vitimas", "veiculos"))
 \item{type}{One of \code{"sinistros"}, \code{"vitimas"}, or \code{"veiculos"}. Determines which dataset to load.}
 }
 \value{
-A \code{data.frame} with the selected dataset.
+A \code{tibble} with the selected dataset.
 }
 \description{
 Downloads and loads a \code{.parquet} dataset (sinistros, vítimas ou veículos).
