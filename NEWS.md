@@ -1,3 +1,5 @@
+# infosiga 0.2.2
+
 # infosiga 0.2.1
 
 * Write tests (#29)
