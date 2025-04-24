@@ -2,6 +2,10 @@
 
 * Update data to 2025-03 (#33)
 
+* Fix wrong data (#35)
+
+* Use httr to download data (#36)
+
 # infosiga 0.2.1
 
 * Write tests (#29)
