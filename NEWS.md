@@ -1,3 +1,7 @@
+# infosiga 0.2.2
+
+* Update data to 2025-03 (#33)
+
 # infosiga 0.2.1
 
 * Write tests (#29)
