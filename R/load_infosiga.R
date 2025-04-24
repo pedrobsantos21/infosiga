@@ -26,7 +26,7 @@ load_infosiga <- function(type = c("sinistros", "vitimas", "veiculos")) {
     temp = tempfile(fileext = ".parquet")
     on.exit(unlink(temp), add = TRUE)
 
-    utils::download.file(url = file_url, destfile = temp)
+    httr::GET(file_url, httr::write_disk(temp, overwrite = TRUE))
     df = nanoparquet::read_parquet(temp)
 
     return(df)
