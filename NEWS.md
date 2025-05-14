@@ -1,3 +1,5 @@
+# infosiga 0.2.3
+
 # infosiga 0.2.2
 
 * Update data to 2025-03 (#33)
