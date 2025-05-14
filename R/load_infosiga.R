@@ -15,7 +15,7 @@
 load_infosiga <- function(type = c("sinistros", "vitimas", "veiculos")) {
     type <- match.arg(type)
 
-    file_url = paste0(
+    file_url <- paste0(
         "https://github.com/pabsantos/infosiga/releases/download/v",
         utils::packageVersion("infosiga"),
         "/infosiga_",
@@ -23,11 +23,25 @@ load_infosiga <- function(type = c("sinistros", "vitimas", "veiculos")) {
         ".parquet"
     )
 
-    temp = tempfile(fileext = ".parquet")
+    temp <- tempfile(fileext = ".parquet")
     on.exit(unlink(temp), add = TRUE)
 
-    httr::GET(file_url, httr::write_disk(temp, overwrite = TRUE))
-    df = nanoparquet::read_parquet(temp)
+    message("Starting download...")
+    response <- httr::GET(
+        file_url, 
+        httr::progress(), 
+        httr::write_disk(temp, overwrite = TRUE)
+    )
+
+    status <- httr::status_code(response)
+
+    if (status == 200) {
+        message("Download completed successfully: ", type)
+    } else {
+        stop("Download failed with status code: ", status)
+    }
+
+    df <- nanoparquet::read_parquet(temp)
 
     return(df)
 }
