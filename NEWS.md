@@ -1,12 +1,14 @@
 # infosiga 0.2.3
 
+* Add status messages in `load_infosiga` (#39)
+
 # infosiga 0.2.2
 
 * Update data to 2025-03 (#33)
 
 * Fix wrong data (#35)
 
-* Use httr to download data (#36)
+* Use `{httr}` to download data (#36)
 
 # infosiga 0.2.1
 
