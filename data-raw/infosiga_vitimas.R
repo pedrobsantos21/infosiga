@@ -10,6 +10,11 @@ pessoas = readr::read_csv2(
 
 unlink(tempdir, recursive = TRUE)
 
+nanoparquet::write_parquet(
+    pessoas,
+    "data-raw/infosiga_vitimas_raw.parquet"
+)
+
 infosiga_vitimas = pessoas |>
     dplyr::mutate(
         sexo = dplyr::case_match(
@@ -54,10 +59,25 @@ infosiga_vitimas = pessoas |>
         faixa_etaria_demografica = factor(
             faixa_etaria_demografica,
             levels = c(
-                "00 a 04", "05 a 09", "10 a 14", "15 a 19", "20 a 24",
-                "25 a 29", "30 a 34", "35 a 39", "40 a 44", "45 a 49",
-                "50 a 54", "55 a 59", "60 a 64", "65 a 69", "70 a 74",
-                "75 a 79", "80 a 84", "85 a 89", "90+"
+                "00 a 04",
+                "05 a 09",
+                "10 a 14",
+                "15 a 19",
+                "20 a 24",
+                "25 a 29",
+                "30 a 34",
+                "35 a 39",
+                "40 a 44",
+                "45 a 49",
+                "50 a 54",
+                "55 a 59",
+                "60 a 64",
+                "65 a 69",
+                "70 a 74",
+                "75 a 79",
+                "80 a 84",
+                "85 a 89",
+                "90+"
             )
         ),
         data_sinistro = lubridate::dmy(data_sinistro)
@@ -67,8 +87,14 @@ infosiga_vitimas = pessoas |>
         faixa_etaria = faixa_etaria_demografica,
     ) |>
     dplyr::select(
-        id_sinistro, data_sinistro, data_obito,
-        sexo, idade, tipo_vitima, faixa_etaria, tipo_veiculo_vitima,
+        id_sinistro,
+        data_sinistro,
+        data_obito,
+        sexo,
+        idade,
+        tipo_vitima,
+        faixa_etaria,
+        tipo_veiculo_vitima,
         gravidade_lesao
     )
 

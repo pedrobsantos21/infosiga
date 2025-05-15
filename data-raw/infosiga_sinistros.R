@@ -14,6 +14,11 @@ sinistros = readr::read_csv2(
 
 unlink(tempdir, recursive = TRUE)
 
+nanoparquet::write_parquet(
+    sinistros,
+    "data-raw/infosiga_sinistros_raw.parquet"
+)
+
 path_municipios = "data-raw/tb_municipio.csv"
 municipios = readr::read_csv(path_municipios)
 
@@ -40,8 +45,11 @@ infosiga_sinistros = sinistros |>
             tipo_via,
             "NAO DISPONIVEL" ~ NA,
             c(
-                "RODOVIAS", "RURAL", "RURAL (COM CARACTERÍSTICA DE URBANA)"
-            ) ~ "Rodovias",
+                "RODOVIAS",
+                "RURAL",
+                "RURAL (COM CARACTERÍSTICA DE URBANA)"
+            ) ~
+                "Rodovias",
             c("URBANA", "VIAS MUNICIPAIS") ~ "Vias municipais"
         ),
         longitude = stringr::str_replace_all(longitude, ",", "."),
@@ -60,11 +68,11 @@ infosiga_sinistros = sinistros |>
         ),
         dplyr::across(
             dplyr::starts_with("tp_veiculo"),
-            ~dplyr::if_else(is.na(.x), 0, .x)
+            ~ dplyr::if_else(is.na(.x), 0, .x)
         ),
         dplyr::across(
             dplyr::starts_with("gravidade"),
-            ~dplyr::if_else(is.na(.x), 0, .x)
+            ~ dplyr::if_else(is.na(.x), 0, .x)
         ),
         administracao_via = dplyr::case_match(
             administracao,
@@ -72,7 +80,8 @@ infosiga_sinistros = sinistros |>
                 "CONCESSIONÁRIA",
                 "CONCESSIONÁRIA-ANTT",
                 "CONCESSIONÁRIA-ARTESP"
-            ) ~ "Concessionária",
+            ) ~
+                "Concessionária",
             "NAO DISPONIVEL" ~ NA,
             "PREFEITURA" ~ "Prefeitura",
             .default = administracao
@@ -93,7 +102,7 @@ infosiga_sinistros = sinistros |>
         ),
         dplyr::across(
             dplyr::starts_with("tp_sinistro"),
-            ~dplyr::case_when(
+            ~ dplyr::case_when(
                 .x == "S" ~ 1,
                 is.na(.x) ~ 0
             )
@@ -106,11 +115,23 @@ infosiga_sinistros = sinistros |>
     dplyr::mutate(cod_ibge = as.character(cod_ibge)) |>
     dplyr::left_join(list_ibge_sp, by = "cod_ibge") |>
     dplyr::select(
-        id_sinistro, data_sinistro, hora_sinistro, cod_ibge, nome_municipio,
-        logradouro, numero_logradouro, tipo_via,
-        longitude, latitude, dplyr::starts_with("tp_veic"), tipo_registro,
-        dplyr::starts_with("gravidade"), administracao_via, jurisdicao_via,
-        tipo_sinistro_primario, dplyr::starts_with("tp_sinistro")
+        id_sinistro,
+        data_sinistro,
+        hora_sinistro,
+        cod_ibge,
+        nome_municipio,
+        logradouro,
+        numero_logradouro,
+        tipo_via,
+        longitude,
+        latitude,
+        dplyr::starts_with("tp_veic"),
+        tipo_registro,
+        dplyr::starts_with("gravidade"),
+        administracao_via,
+        jurisdicao_via,
+        tipo_sinistro_primario,
+        dplyr::starts_with("tp_sinistro")
     )
 
 infosiga_sinistros$tipo_registro <- enc2utf8(infosiga_sinistros$tipo_registro)
