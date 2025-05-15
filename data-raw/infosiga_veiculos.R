@@ -10,10 +10,19 @@ veiculos = readr::read_csv2(
 
 unlink(tempdir, recursive = TRUE)
 
+nanoparquet::write_parquet(
+    veiculos,
+    "data-raw/infosiga_veiculos_raw.parquet"
+)
+
+
 infosiga_veiculos = veiculos |>
     dplyr::select(
-        id_sinistro, ano_fabricacao = ano_fab,
-        ano_modelo, cor_veiculo, tipo_veiculo
+        id_sinistro,
+        ano_fabricacao = ano_fab,
+        ano_modelo,
+        cor_veiculo,
+        tipo_veiculo
     ) |>
     dplyr::mutate(
         tipo_veiculo = dplyr::case_match(
