@@ -1,3 +1,5 @@
+# infosiga 0.3.0
+
 # infosiga 0.2.3
 
 * Add status messages in `load_infosiga` (#39)
