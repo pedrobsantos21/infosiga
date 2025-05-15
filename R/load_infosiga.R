@@ -3,6 +3,7 @@
 #' Downloads and loads a `.parquet` dataset (sinistros, vítimas ou veículos).
 #'
 #' @param type One of `"sinistros"`, `"vitimas"`, or `"veiculos"`. Determines which dataset to load.
+#' @param raw Boolean. Determines if the data is processed or in raw format. Default value: FALSE
 #'
 #' @return A `tibble` with the selected dataset.
 #'
@@ -12,8 +13,15 @@
 #' }
 #'
 #' @export
-load_infosiga <- function(type = c("sinistros", "vitimas", "veiculos")) {
+load_infosiga <- function(
+    type = c("sinistros", "vitimas", "veiculos"),
+    raw = FALSE
+) {
     type <- match.arg(type)
+
+    if (raw) {
+        type <- paste0(type, "_raw")
+    }
 
     file_url <- paste0(
         "https://github.com/pabsantos/infosiga/releases/download/v",
@@ -28,8 +36,8 @@ load_infosiga <- function(type = c("sinistros", "vitimas", "veiculos")) {
 
     message("Starting download...")
     response <- httr::GET(
-        file_url, 
-        httr::progress(), 
+        file_url,
+        httr::progress(),
         httr::write_disk(temp, overwrite = TRUE)
     )
 

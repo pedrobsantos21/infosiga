@@ -4,10 +4,12 @@
 \alias{load_infosiga}
 \title{Load data from Infosiga.SP}
 \usage{
-load_infosiga(type = c("sinistros", "vitimas", "veiculos"))
+load_infosiga(type = c("sinistros", "vitimas", "veiculos"), raw = FALSE)
 }
 \arguments{
 \item{type}{One of \code{"sinistros"}, \code{"vitimas"}, or \code{"veiculos"}. Determines which dataset to load.}
+
+\item{raw}{Boolean. Determines if the data is processed or in raw format. Default value: FALSE}
 }
 \value{
 A \code{tibble} with the selected dataset.
