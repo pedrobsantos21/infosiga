@@ -8,4 +8,4 @@ data-raw/infosiga_sinistros.parquet
 data-raw/infosiga_vitimas.parquet
 data-raw/infosiga_veiculos.parquet
 data-raw/dados_infosiga.zip
-data-raw/infosiga_*
+data-raw/infosiga_*.parquet
