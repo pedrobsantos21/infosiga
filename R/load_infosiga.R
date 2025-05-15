@@ -53,9 +53,6 @@ load_infosiga <- function(
         }
     }
 
-    # Register cleanup in case of error
-    on.exit(cleanup(), add = TRUE)
-
     response <- httr::GET(
         file_url,
         httr::progress(),
@@ -66,6 +63,7 @@ load_infosiga <- function(
 
     if (status != 200) {
         cli::cli_alert_danger("Download failed with status code: {status}")
+        cleanup()
         stop()
     }
 
