@@ -1,5 +1,11 @@
 # infosiga 0.3.0
 
+* Add option to load raw infosiga data (#40)
+
+* Add cache functionality to `load_infosiga`
+
+* Add new function to clear cache: `clear_infosiga_cache` 
+
 # infosiga 0.2.3
 
 * Add status messages in `load_infosiga` (#39)
