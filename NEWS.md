@@ -1,3 +1,5 @@
+# infosiga 0.3.1
+
 # infosiga 0.3.0
 
 * Add option to load raw infosiga data (#40)
