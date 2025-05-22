@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![R-CMD-check](https://github.com/pabsantos/infosiga/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/pabsantos/infosiga/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/pedrobsantos21/infosiga/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/pedrobsantos21/infosiga/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of `infosiga` is to provide three datasets related to road crashes that happened in the State of São Paulo, Brazil, from the Infosiga.SP data repository. These data includes attributes from the crashes (`infosiga_sinistros`), victims (`infosiga_vitimas`) and vehicles (`infosiga_veiculos`).
@@ -28,7 +28,7 @@ You can install the development version of infosiga from [GitHub](https://github
 
 ``` r
 # install.packages("pak")
-pak::pak("pabsantos/infosiga")
+pak::pak("pedrobsantos21/infosiga")
 ```
 
 ## Example
