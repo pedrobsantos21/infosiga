@@ -37,7 +37,7 @@ load_infosiga <- function(
     }
 
     file_url <- paste0(
-        "https://github.com/pabsantos/infosiga/releases/download/v",
+        "https://github.com/pedrobsantos21/infosiga/releases/download/v",
         utils::packageVersion("infosiga"),
         "/",
         file_name
