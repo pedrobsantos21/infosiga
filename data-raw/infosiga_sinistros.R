@@ -55,7 +55,7 @@ infosiga_sinistros = sinistros |>
         longitude = stringr::str_replace_all(longitude, ",", "."),
         longitude = as.numeric(longitude),
         longitude = dplyr::if_else(
-            longitude > -44.1 | longitude < -53.1,
+            longitude > -44.0 | longitude < -53.5,
             NA,
             longitude
         ),
