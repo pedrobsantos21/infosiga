@@ -33,7 +33,7 @@ infosiga_vitimas = pessoas |>
         ),
         tipo_veiculo_vitima = dplyr::case_match(
             tipo_veiculo_vitima,
-            "PEDESTRE" ~ "Pedestre",
+            "PEDESTRE" ~ "A pé",
             "MOTOCICLETA" ~ "Motocicleta",
             "AUTOMOVEL" ~ "Automóvel",
             "NAO DISPONIVEL" ~ NA,
@@ -42,6 +42,17 @@ infosiga_vitimas = pessoas |>
             "CAMINHAO" ~ "Caminhão",
             "ONIBUS" ~ "Ônibus",
             .default = tipo_veiculo_vitima
+        ),
+        tipo_modo_vitima = dplyr::case_match(
+            tipo_veiculo_vitima,
+            "A pé" ~ "Pedestre",
+            "Motocicleta" ~ "Ocupante de motocicleta",
+            "Automóvel" ~ "Ocupante de automóvel",
+            "Bicicleta" ~ "Ciclista",
+            "Caminhão" ~ "Ocupante de caminhão",
+            "Ônibus" ~ "Ocupante de ônibus",
+            'Outros' ~ "Outros",
+            .default = TRUE
         ),
         gravidade_lesao = dplyr::case_match(
             gravidade_lesao,

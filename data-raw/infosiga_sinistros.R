@@ -49,8 +49,8 @@ infosiga_sinistros = sinistros |>
                 "RURAL",
                 "RURAL (COM CARACTERÍSTICA DE URBANA)"
             ) ~
-                "Rodovias",
-            c("URBANA", "VIAS MUNICIPAIS") ~ "Vias municipais"
+                "Vias rurais",
+            c("URBANA", "VIAS MUNICIPAIS") ~ "Vias urbanas"
         ),
         longitude = stringr::str_replace_all(longitude, ",", "."),
         longitude = as.numeric(longitude),
