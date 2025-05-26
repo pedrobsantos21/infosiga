@@ -1,3 +1,9 @@
+# infosiga 0.4.0
+
+* Add new variable to `infosiga_vitimas`: `tipo_modo_vitima`
+
+* Change `tipo_via` entries.
+
 # infosiga 0.3.1
 
 * Change repo url

@@ -1,6 +1,6 @@
 Package: infosiga
 Title: Road Crash Data From Infosiga.SP
-Version: 0.3.1
+Version: 0.4.0
 Authors@R: 
     person(
         given = c("Pedro", "Augusto", "Borges"),
