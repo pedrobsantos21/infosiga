@@ -52,7 +52,7 @@ infosiga_vitimas = pessoas |>
             "Caminhão" ~ "Ocupante de caminhão",
             "Ônibus" ~ "Ocupante de ônibus",
             'Outros' ~ "Outros",
-            .default = TRUE
+            .default = NA
         ),
         gravidade_lesao = dplyr::case_match(
             gravidade_lesao,
@@ -106,6 +106,7 @@ infosiga_vitimas = pessoas |>
         tipo_vitima,
         faixa_etaria,
         tipo_veiculo_vitima,
+        tipo_modo_vitima,
         gravidade_lesao
     )
 
