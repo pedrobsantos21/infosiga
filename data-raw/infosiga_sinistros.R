@@ -119,6 +119,7 @@ infosiga_sinistros = sinistros |>
         data_sinistro,
         hora_sinistro,
         cod_ibge,
+        regiao_administrativa,
         nome_municipio,
         logradouro,
         numero_logradouro,
