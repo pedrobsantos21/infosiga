@@ -1,3 +1,5 @@
+# infosiga 0.4.1
+
 # infosiga 0.4.0
 
 * Add new variable to `infosiga_vitimas`: `tipo_modo_vitima`
