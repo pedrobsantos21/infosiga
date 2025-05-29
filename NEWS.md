@@ -1,3 +1,5 @@
+# infosiga 0.4.2
+
 # infosiga 0.4.1
 
 * Add new variable to `infosiga_sinistros`: `regiao_administrativa`
