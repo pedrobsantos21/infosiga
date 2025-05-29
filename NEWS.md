@@ -1,3 +1,9 @@
+# infosiga 0.4.2
+
+* Fix missing values in `infosiga_sinistros`: `gravidade_grave` and `gravidade_leve`
+
+* Fix missing values in `infosiga_vitimas`: `gravidade_lesao` now have proper values of "Grave" and "Leve:
+
 # infosiga 0.4.1
 
 * Add new variable to `infosiga_sinistros`: `regiao_administrativa`
