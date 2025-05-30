@@ -1,5 +1,7 @@
 # infosiga 0.4.3
 
+* Fix values from wrong release date.
+
 # infosiga 0.4.2
 
 * Fix missing values in `infosiga_sinistros`: `gravidade_grave` and `gravidade_leve`
