@@ -1,5 +1,7 @@
 # infosiga 0.4.4
 
+* Fix `tipo_veiculo_vitima` values from `vitimas`
+
 # infosiga 0.4.3
 
 * Fix values from wrong release date.
