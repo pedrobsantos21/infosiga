@@ -33,7 +33,7 @@ infosiga_vitimas = pessoas |>
         ),
         tipo_veiculo_vitima = dplyr::case_match(
             tipo_veiculo_vitima,
-            "PEDESTRE" ~ "A pé",
+            c("PEDESTRE", "Pedestre") ~ "A pé",
             "MOTOCICLETA" ~ "Motocicleta",
             "AUTOMOVEL" ~ "Automóvel",
             "NAO DISPONIVEL" ~ NA,
