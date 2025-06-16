@@ -1,3 +1,5 @@
+# infosiga 0.4.5
+
 # infosiga 0.4.4
 
 * Fix `tipo_veiculo_vitima` values from `vitimas`
